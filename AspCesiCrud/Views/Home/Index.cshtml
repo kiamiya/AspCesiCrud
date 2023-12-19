@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if(User.Identity.IsAuthenticated)
+    {
+        <p><a class="btn btn-primary" href="@Url.Action("Index", "Contacts")">Go to Contacts CRUD</a></p>
+    }
+    else
+    {
+        <p><a asp-area="Identity" asp-page="/Account/Register">Register</a> or <a asp-area="Identity" asp-page="/Account/Login">Login</a> to start.</p>
+    }
+</div>
